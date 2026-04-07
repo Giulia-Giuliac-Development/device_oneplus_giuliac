@@ -31,6 +31,9 @@ PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0-service \
     hwservicemanager
 
+# Haptics Profile Picker
+$(call inherit-product-if-exists, device/oneplus/giuliac/vibrator/picker.mk)
+
 # Init
 PRODUCT_PACKAGES += \
     init.haptics.rc
