@@ -35,7 +35,9 @@ public class HapticsProfileActivity extends Activity {
         new AlertDialog.Builder(this)
             .setTitle(R.string.haptics_profile_title)
             .setSingleChoiceItems(entries, selected, (dialog, which) -> {
+                android.util.Log.d("HapticsProfile", "onClick: setting " + propKey + " = " + values[which]);
                 SystemProperties.set(propKey, values[which]);
+                android.util.Log.d("HapticsProfile", "onClick: done");
                 dialog.dismiss();
                 finish();
             })
